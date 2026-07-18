@@ -1,105 +1,56 @@
 # MERN Doctor Appointment App
 
-This repository contains a full-stack MERN application for doctor appointment management, including separate frontend, dashboard, and backend services.
+A full-stack MERN application for managing doctor appointments, messages, and administrative dashboards.
+
+## Overview
+
+This repository contains separate modules for the API backend, patient-facing frontend, and admin dashboard. Each module is structured as an independent Node/React application to simplify development and deployment.
 
 ## Repository Structure
 
 - `backend/`
-  - `app.js`
-  - `server.js`
-  - `package.json`
-  - `config/`
-    - `config.env`
-  - `controller/`
-    - `appointmentController.js`
-    - `messageController.js`
-    - `userController.js`
-  - `database/`
-    - `dbConnection.js`
-  - `middlewares/`
-    - `auth.js`
-    - `catchAsyncErrors.js`
-    - `error.js`
-  - `models/`
-    - `appointmentSchema.js`
-    - `messageSchema.js`
-    - `statsSchema.js`
-    - `userSchema.js`
-  - `router/`
-    - `appointmentRouter.js`
-    - `messageRouter.js`
-    - `userRouter.js`
-  - `utils/`
-    - `jwtToken.js`
+  - `app.js` - Express application setup
+  - `server.js` - HTTP server entry point
+  - `package.json` - backend dependencies and scripts
+  - `config/config.env` - environment configuration
+  - `controller/` - request handlers for appointments, messages, and users
+  - `database/dbConnection.js` - MongoDB connection logic
+  - `middlewares/` - authentication, error handling, and async wrapper middleware
+  - `models/` - Mongoose schemas for appointments, messages, stats, and users
+  - `router/` - API routes for appointments, messages, and users
+  - `utils/jwtToken.js` - JWT token generation helper
 
 - `frontend/`
-  - `package.json`
-  - `vite.config.js`
-  - `eslint.config.js`
-  - `index.html`
-  - `README.md`
-  - `src/`
-    - `App.css`
-    - `App.jsx`
-    - `config.js`
-    - `index.css`
-    - `main.jsx`
-    - `components/`
-      - `AppointmentForm.jsx`
-      - `Biography.jsx`
-      - `Departments.jsx`
-      - `Footer.jsx`
-      - `Hero.jsx`
-      - `MessageForm.jsx`
-      - `Navbar.jsx`
-      - `assets/`
-    - `Pages/`
-      - `AboutUs.jsx`
-      - `Appointment.jsx`
-      - `Home.jsx`
-      - `Login.jsx`
-      - `Register.jsx`
-  - `public/`
-    - `departments/`
+  - React app for patients and public users
+  - `package.json` - frontend dependencies and scripts
+  - `vite.config.js` - Vite configuration
+  - `eslint.config.js` - linting configuration
+  - `src/` - frontend source code
+    - `App.jsx` - root app component
+    - `main.jsx` - client entry point
+    - `config.js` - environment or API config values
+    - `components/` - reusable UI components
+    - `Pages/` - page-level route components
+  - `public/` - static assets and public files
 
 - `dashboard/`
-  - `package.json`
-  - `vite.config.js`
-  - `eslint.config.js`
-  - `index.html`
-  - `README.md`
-  - `src/`
-    - `App.css`
-    - `App.jsx`
-    - `config.js`
-    - `main.jsx`
-    - `components/`
-      - `AddNewAdmin.jsx`
-      - `AddNewDoctor.jsx`
-      - `Dashboard.jsx`
-      - `Doctors.jsx`
-      - `Login.jsx`
-      - `Messages.jsx`
-      - `Sidebar.jsx`
+  - Admin dashboard React application
+  - `package.json` - dashboard dependencies and scripts
+  - `vite.config.js` - Vite configuration
+  - `eslint.config.js` - linting configuration
+  - `src/` - dashboard source code
+    - `App.jsx` - root dashboard component
+    - `main.jsx` - client entry point
+    - `components/` - dashboard-specific UI components
 
 - `mern_hospital_management_system/`
-  - `app.js`
-  - `server.js`
-  - `package.json`
-  - `package-lock.json`
-  - `config/`
-  - `controller/`
-  - `database/`
-  - `middlewares/`
-  - `models/`
-  - `router/`
-  - `utils/`
+  - Additional Node.js service or legacy module with its own Express entry points and module structure
 
 ## Notes
 
-- `backend/` contains the Express API server and MongoDB connection.
-- `frontend/` is the patient-facing React + Vite application.
-- `dashboard/` is the admin/doctor dashboard React + Vite application.
-- `mern_hospital_management_system/` appears to contain an additional Node service or legacy module.
+- `backend/` provides the REST API and handles authentication, database access, and business logic.
+- `frontend/` is the patient-facing React application.
+- `dashboard/` is the React application used by administrators or doctors.
+- `mern_hospital_management_system/` may contain another Node application or an alternate server implementation.
 
-For more details, check the `README.md` files inside `frontend/` and `dashboard/`.
+For usage instructions, review the `README.md` files found in `frontend/` and `dashboard/`.
